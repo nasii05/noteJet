@@ -11,3 +11,15 @@ app.use(express.json());
 
 // static files
 app.use(express.static('public'));
+
+// Templating Engine
+app.use(expressLayouts);
+app.set('layout','./layouts/main');
+app.set('view engine', 'ejs');
+
+// Routes 
+app.use('/', require('./server/routes/index'));
+
+app.listen(port, ()=>{
+    console.log(`app listening in port ${port}`)
+})
