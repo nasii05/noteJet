@@ -65,7 +65,7 @@ router.get('/logout', (req, res)=>{
       res.redirect('/')
     }
   })
-})
+});
 
 // Presist user data after succesfil authentication
 passport.serializeUser(function (user, done) {
